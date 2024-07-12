@@ -4,11 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="flag.png" />
+    <script defer src="script.js"></script>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>Countries-API</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1>Where in the world?</h1>
+      <button class="toggle">
+        <i class="bx bx-moon">dark mode</i>
+      </button>
+    </div>
+
+    <div class="container">
+      <div class="controls">
+        <i class="bx bx-search"></i>
+        <input type="search" placeholder="search the country" class="search" />
+      </div>
+
+      <div class="dropdownMenu">
+        <div class="dropdown">
+          <p>Filter by Region</p>
+          <i class="bx bx-chevron-down"></i>
+        </div>
+
+        <div class="drop-options">
+          <p class="regions">All</p>
+          <p class="regions">Africa</p>
+          <p class="regions">America</p>
+          <p class="regions">Asia</p>
+          <p class="regions">Oceania</p>
+          <p class="regions">Europe</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: hsl(0, 0%, 98%);
+  --font-color: hsl(200, 15%, 8%);
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+.container:nth-child(1) {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  align-items: center;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  padding: 18px 20px;
+  border-radius: 5px;
+}
+
+.controls input {
+  outline: none;
+  border: none;
+  width: 200px;
+}
+
+.dropdownMenu {
+  width: 200px;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  padding: 18px 20px;
+  border-radius: 5px;
+}
+.drop-options {
+  position: absolute;
+  display: none;
+  width: 200px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  background-color: var(--bg-color);
+  padding: 15px 20px;
+  margin-top: 15px;
+}
+
+.drop-options p {
+  margin: 5px 0;
+}
+
+.show-options {
+  display: block;
+}
