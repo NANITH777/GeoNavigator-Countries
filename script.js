@@ -3,6 +3,7 @@ const dropOptions = document.querySelector(".drop-options");
 const toggle = document.querySelector(".toggle");
 const icon = document.querySelector(".bx");
 const countries = document.querySelector(".countries");
+const search = document.querySelector(".search");
 
 toggle.addEventListener("click", (e) => {
   document.body.classList.toggle("dark-mode");
@@ -30,9 +31,7 @@ function showCountry(data) {
   const country = document.createElement("div");
   country.classList.add("country");
 
-  const language = data.languages
-    ? data.languages[0] // Access the first language object
-    : "No language";
+  const language = data.languages ? data.languages[0] : "No language";
   const currency = data.currencies
     ? data.currencies[Object.keys(data.currencies)[0]]?.name
     : "No currency";
@@ -53,3 +52,15 @@ function showCountry(data) {
 
   countries.appendChild(country);
 }
+
+const countryNameElements = document.querySelectorAll(".countryName");
+
+search.addEventListener("input", (e) => {
+  const searchTerm = e.target.value.toLowerCase();
+
+  countryNameElements.forEach((country) => {
+    const countryContainer = country.parentElement.parentElement;
+    const isMatch = country.innerText.toLowerCase().includes(searchTerm);
+    countryContainer.style.display = isMatch ? "grid" : "none";
+  });
+});
