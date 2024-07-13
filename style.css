@@ -88,3 +88,27 @@ button {
 .show-options {
   display: block;
 }
+
+.countries {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  padding: 30px;
+}
+
+.country {
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+.country-img {
+  width: 300px;
+}
+
+.country-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
