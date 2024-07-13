@@ -2,6 +2,7 @@ const dropDown = document.querySelector(".dropdownMenu");
 const dropOptions = document.querySelector(".drop-options");
 const toggle = document.querySelector(".toggle");
 const icon = document.querySelector(".bx");
+const countries = document.querySelector(".countries");
 
 toggle.addEventListener("click", (e) => {
   document.body.classList.toggle("dark-mode");
@@ -30,7 +31,7 @@ function showCountry(data) {
   country.classList.add("country");
 
   const language = data.languages
-    ? data.languages[Object.keys(data.languages)[0]]
+    ? data.languages[0] // Access the first language object
     : "No language";
   const currency = data.currencies
     ? data.currencies[Object.keys(data.currencies)[0]]?.name
@@ -46,7 +47,9 @@ function showCountry(data) {
           <p><strong>Population 👫:</strong>${data.population}</p>
           <p><strong>Region 🌇:</strong>${data.region}</p>
           <p><strong>Capital 🏙️:</strong>${data.capital}</p>
-          <p><strong>Languages 🗣️:</strong>${language}</p>
-          <p><strong>Languages 💰:</strong>${currency}</p>
+          <p><strong>Languages 🗣️:</strong>${language.name}</p>
+          <p><strong>Currencies 💰:</strong>${currency}</p>
         </div>`;
+
+  countries.appendChild(country);
 }

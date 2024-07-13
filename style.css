@@ -97,14 +97,15 @@ button {
 }
 
 .country {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  min-height: 400px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
+  margin-bottom: 3rem;
 }
 
 .country-img {
-  width: 300px;
+  width: 250px;
 }
 
 .country-img img {
@@ -112,14 +113,14 @@ button {
   height: 100%;
   object-fit: cover;
 }
+.country-details {
+  justify-content: center;
+  padding: 20px 25px;
+}
 
 .country-details h5 {
   font-size: 20px;
   margin-bottom: 10px;
-}
-.country-details {
-  justify-content: center;
-  padding: 20px 25px;
 }
 
 .country-details strong {
