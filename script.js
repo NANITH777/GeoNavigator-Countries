@@ -13,9 +13,9 @@ toggle.addEventListener("click", (e) => {
   dropDown.classList.toggle("dark-mode");
 
   if (document.body.classList.contains("dark-mode")) {
-    icon.textContent = "light mode";
+    icon.textContent = "Light mode";
   } else {
-    icon.textContent = "dark mode";
+    icon.textContent = "Dark mode";
   }
 });
 
@@ -87,3 +87,10 @@ regions.forEach((region) => {
     });
   });
 });
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
