@@ -35,6 +35,16 @@ body {
   color: #f0f0f0;
 }
 
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  color: var(--font-color);
+  z-index: 10;
+}
+
 .container:nth-child(1) {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
@@ -121,11 +131,18 @@ button {
   border-radius: 5px;
   margin-bottom: 3rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateX(20px);
 }
 
 .country:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.country.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .country-img {
@@ -153,11 +170,12 @@ button {
 }
 
 footer {
+  position: relative;
+  bottom: 0;
   text-align: center;
   padding: 20px;
   background-color: #f0f0f0;
   margin-top: 20px;
-  position: relative;
 }
 
 footer p {
@@ -176,4 +194,8 @@ footer p {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }

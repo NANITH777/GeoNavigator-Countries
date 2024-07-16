@@ -30,6 +30,9 @@ async function getCountries() {
   res.forEach((api) => {
     showCountry(api);
   });
+
+  document.getElementById("loading").style.display = "none";
+  document.querySelector("footer").classList.remove("hidden");
 }
 
 getCountries();
@@ -58,6 +61,10 @@ function showCountry(data) {
         </div>`;
 
   countries.appendChild(country);
+
+  setTimeout(() => {
+    country.classList.add("show");
+  }, 10);
 }
 
 const countryName = document.getElementsByClassName("countryName");
@@ -65,9 +72,11 @@ const countryName = document.getElementsByClassName("countryName");
 search.addEventListener("input", (e) => {
   Array.from(countryName).forEach((country) => {
     if (country.innerText.toLowerCase().includes(search.value.toLowerCase())) {
-      country.parentElement.parentElement.style.display = "grid";
+      country.parentElement.parentElement.style.display = "block";
+      country.classList.add("show");
     } else {
       country.parentElement.parentElement.style.display = "none";
+      country.classList.remove("show");
     }
   });
 });
