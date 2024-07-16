@@ -31,7 +31,8 @@ body {
   background-color: #1f2232;
 }
 
-.dark-mode footer p {
+.dark-mode footer p,
+.dark-mode .no-country {
   color: #f0f0f0;
 }
 
@@ -45,7 +46,7 @@ body {
   z-index: 10;
 }
 
-.container:nth-child(1) {
+.first-container {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -64,6 +65,10 @@ button {
 
 .toggle {
   cursor: pointer;
+}
+
+.icon {
+  margin-right: 8px;
 }
 
 .controls {
@@ -107,6 +112,7 @@ button {
   background-color: var(--bg-color);
   padding: 15px 20px;
   margin-top: 15px;
+  z-index: 1;
 }
 
 .drop-options p {
@@ -167,6 +173,17 @@ button {
 
 .country-details strong {
   margin-right: 5px;
+}
+
+.no-country {
+  display: none;
+  margin: 20px 0;
+  padding: 10px;
+  color: var(--font-color);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: opacity 0.3s;
 }
 
 footer {

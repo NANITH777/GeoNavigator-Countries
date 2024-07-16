@@ -5,11 +5,13 @@ const icon = document.querySelector(".bx");
 const countries = document.querySelector(".countries");
 const search = document.querySelector(".search");
 const regions = document.querySelectorAll(".regions");
+const footerDisplay = document.querySelector("footer");
+const noCountryMessage = document.querySelector(".no-country");
 
 toggle.addEventListener("click", (e) => {
   document.body.classList.toggle("dark-mode");
   toggle.classList.toggle("dark-mode");
-  icon.classList.toggle("bxs-moon");
+  icon.classList.toggle("bx-sun");
   dropDown.classList.toggle("dark-mode");
 
   if (document.body.classList.contains("dark-mode")) {
@@ -32,7 +34,7 @@ async function getCountries() {
   });
 
   document.getElementById("loading").style.display = "none";
-  document.querySelector("footer").classList.remove("hidden");
+  footerDisplay.classList.remove("hidden");
 }
 
 getCountries();
@@ -70,15 +72,38 @@ function showCountry(data) {
 const countryName = document.getElementsByClassName("countryName");
 
 search.addEventListener("input", (e) => {
-  Array.from(countryName).forEach((country) => {
-    if (country.innerText.toLowerCase().includes(search.value.toLowerCase())) {
+  let countryFound = false;
+
+  if (search.value.trim() === "") {
+    noCountryMessage.style.display = "none";
+    Array.from(countryName).forEach((country) => {
       country.parentElement.parentElement.style.display = "block";
       country.classList.add("show");
+    });
+
+    footerDisplay.classList.remove("hidden");
+  } else {
+    Array.from(countryName).forEach((country) => {
+      if (
+        country.innerText.toLowerCase().includes(search.value.toLowerCase())
+      ) {
+        country.parentElement.parentElement.style.display = "block";
+        country.classList.add("show");
+        countryFound = true;
+      } else {
+        country.parentElement.parentElement.style.display = "none";
+        country.classList.remove("show");
+      }
+    });
+
+    if (countryFound) {
+      noCountryMessage.style.display = "none";
+      footerDisplay.classList.remove("hidden");
     } else {
-      country.parentElement.parentElement.style.display = "none";
-      country.classList.remove("show");
+      noCountryMessage.style.display = "block";
+      footerDisplay.classList.add("hidden");
     }
-  });
+  }
 });
 
 const regionName = document.getElementsByClassName("regionName");
