@@ -11,6 +11,12 @@ toggle.addEventListener("click", (e) => {
   toggle.classList.toggle("dark-mode");
   icon.classList.toggle("bxs-moon");
   dropDown.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    icon.textContent = "light mode";
+  } else {
+    icon.textContent = "dark mode";
+  }
 });
 
 dropDown.addEventListener("click", (e) => {
