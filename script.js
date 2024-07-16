@@ -42,7 +42,7 @@ function showCountry(data) {
           />
         </div>
         <div class="country-details">
-          <h5>${data.name}</h5>
+          <h5 class="countryName">${data.name}</h5>
           <p><strong>Population 👫:</strong>${data.population}</p>
           <p><strong>Region 🌇:</strong>${data.region}</p>
           <p><strong>Capital 🏙️:</strong>${data.capital}</p>
@@ -53,14 +53,14 @@ function showCountry(data) {
   countries.appendChild(country);
 }
 
-const countryNameElements = document.querySelectorAll(".countryName");
+const countryName = document.getElementsByClassName("countryName");
 
 search.addEventListener("input", (e) => {
-  const searchTerm = e.target.value.toLowerCase();
-
-  countryNameElements.forEach((country) => {
-    const countryContainer = country.parentElement.parentElement;
-    const isMatch = country.innerText.toLowerCase().includes(searchTerm);
-    countryContainer.style.display = isMatch ? "grid" : "none";
+  Array.from(countryName).forEach((country) => {
+    if (country.innerText.toLowerCase().includes(search.value.toLowerCase())) {
+      country.parentElement.parentElement.style.display = "grid";
+    } else {
+      country.parentElement.parentElement.style.display = "none";
+    }
   });
 });
