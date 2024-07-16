@@ -56,7 +56,7 @@ function showCountry(data) {
         <div class="country-details">
           <h5 class="countryName">${data.name}</h5>
           <p><strong>Population 👫:</strong>${data.population}</p>
-          <p class="regionName"><strong>Region 🌇:</strong>${data.region}</p>
+          <p class="regionName"><strong>Region 🌍:</strong>${data.region}</p>
           <p><strong>Capital 🏙️:</strong>${data.capital}</p>
           <p><strong>Languages 🗣️:</strong>${language.name}</p>
           <p><strong>Currencies 💰:</strong>${currency}</p>
@@ -110,6 +110,10 @@ search.addEventListener("input", (e) => {
     }
   }
 });
+
+/*search.addEventListener("blur", () => {
+  search.value = "";
+});*/
 
 const regionName = document.getElementsByClassName("regionName");
 regions.forEach((region) => {
