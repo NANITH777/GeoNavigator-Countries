@@ -4,6 +4,7 @@ const toggle = document.querySelector(".toggle");
 const icon = document.querySelector(".bx");
 const countries = document.querySelector(".countries");
 const search = document.querySelector(".search");
+const regions = document.querySelectorAll(".regions");
 
 toggle.addEventListener("click", (e) => {
   document.body.classList.toggle("dark-mode");
@@ -44,7 +45,7 @@ function showCountry(data) {
         <div class="country-details">
           <h5 class="countryName">${data.name}</h5>
           <p><strong>Population 👫:</strong>${data.population}</p>
-          <p><strong>Region 🌇:</strong>${data.region}</p>
+          <p class="regionName"><strong>Region 🌇:</strong>${data.region}</p>
           <p><strong>Capital 🏙️:</strong>${data.capital}</p>
           <p><strong>Languages 🗣️:</strong>${language.name}</p>
           <p><strong>Currencies 💰:</strong>${currency}</p>
@@ -62,5 +63,21 @@ search.addEventListener("input", (e) => {
     } else {
       country.parentElement.parentElement.style.display = "none";
     }
+  });
+});
+
+const regionName = document.getElementsByClassName("regionName");
+regions.forEach((region) => {
+  region.addEventListener("click", (e) => {
+    Array.from(regionName).forEach((reg) => {
+      if (
+        reg.innerText.includes(region.innerText) ||
+        region.innerText === "All"
+      ) {
+        reg.parentElement.parentElement.style.display = "grid";
+      } else {
+        reg.parentElement.parentElement.style.display = "none";
+      }
+    });
   });
 });
