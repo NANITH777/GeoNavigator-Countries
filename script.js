@@ -62,6 +62,11 @@ function showCountry(data) {
           <p><strong>Currencies 💰:</strong>${currency}</p>
         </div>`;
 
+  country.addEventListener("click", () => {
+    localStorage.setItem("selectedCountry", JSON.stringify(data));
+    window.location.href = "country.html";
+  });
+
   countries.appendChild(country);
 
   setTimeout(() => {
