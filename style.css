@@ -142,7 +142,7 @@ button {
   margin-bottom: 3rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
-  transform: translateX(20px);
+  transform: translateX(20px) translateY(20px);
 }
 
 .country:hover {
@@ -152,7 +152,7 @@ button {
 
 .country.show {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(-15px) translateX(15px);
 }
 
 .country-img {
@@ -223,6 +223,7 @@ footer p {
   display: none;
 }
 
+/**************Country Page***********/
 .back-button {
   margin: 20px 10px;
   padding: 10px 20px;
@@ -236,7 +237,44 @@ footer p {
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
+ul {
+  list-style-type: none;
+  margin-left: 15px;
+}
 .back-button:hover {
   background-color: #b3b9c0;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.country-details-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.country-details-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.country-details-img {
+  width: 350px;
+  height: 200px;
+  margin-right: 20px;
+  margin-left: 200px;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(20px);
+}
+
+.country-details-img:hover {
+  transform: translateY(-5px);
+}
+
+.country-details {
+  text-align: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
