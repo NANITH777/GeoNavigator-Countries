@@ -142,7 +142,7 @@ button {
   margin-bottom: 3rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
-  transform: translateX(20px) translateY(20px);
+  transform: translateX(20px);
 }
 
 .country:hover {
@@ -152,7 +152,7 @@ button {
 
 .country.show {
   opacity: 1;
-  transform: translateX(-15px) translateX(15px);
+  transform: translateX(-15px);
 }
 
 .country-img {
@@ -263,7 +263,7 @@ ul {
   height: 200px;
   margin-right: 20px;
   margin-left: 200px;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform: translateY(20px);
 }
