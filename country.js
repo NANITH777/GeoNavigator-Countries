@@ -42,5 +42,25 @@ document.addEventListener("DOMContentLoaded", () => {
       ? selectedCountry.currencies.map((curr) => curr.name).join(", ")
       : "No currencies available";
     document.getElementById("country-currencies").innerText = currencies;
+
+    // Fetch neighboring countries
+    if (selectedCountry.borders) {
+      selectedCountry.borders.forEach((border) => {
+        fetch(`https://restcountries.com/v2/alpha/${border}`)
+          .then((response) => response.json())
+          .then((neighbor) => {
+            const neighborDiv = document.createElement("div");
+            neighborDiv.classList.add("neighbor-country");
+            neighborDiv.innerText = neighbor.name;
+            neighborDiv.addEventListener("click", () => {
+              localStorage.setItem("selectedCountry", JSON.stringify(neighbor));
+              window.location.href = "country.html";
+            });
+            document
+              .getElementById("neighboring-countries")
+              .appendChild(neighborDiv);
+          });
+      });
+    }
   }
 });
