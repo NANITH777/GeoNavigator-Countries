@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("dark-mode");
     toggle.classList.remove("dark-mode");
     icon.classList.remove("bx-sun");
-    dropDown.classList.remove("dark-mode");
     icon.textContent = "Dark mode";
   }
 });

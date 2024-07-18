@@ -92,6 +92,7 @@ function showCountry(data) {
   setTimeout(() => {
     country.classList.add("show");
   }, 10);
+  search.value = "";
 }
 
 const countryName = document.getElementsByClassName("countryName");
@@ -130,10 +131,6 @@ search.addEventListener("input", (e) => {
     }
   }
 });
-
-/*search.addEventListener("blur", () => {
-  search.value = "";
-});*/
 
 const regionName = document.getElementsByClassName("regionName");
 regions.forEach((region) => {

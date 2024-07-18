@@ -2,11 +2,11 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: 0;
 }
 
 :root {
-  --bg-color: hsl(0, 0%, 98%);
+  --bg-color: hsl(0, 3%, 94%);
   --font-color: hsl(231, 10%, 14%);
   font-family: "Nunito Sans", sans-serif;
 }
@@ -256,11 +256,9 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
 }
 
 .country-details-img {
-  width: 350px;
   height: 200px;
   margin-right: 20px;
   margin-left: 200px;
@@ -278,6 +276,12 @@ ul {
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
+}
+
+.country-details p,
+.country h1 {
+  margin-bottom: 6px;
 }
 
 .neighbors {
