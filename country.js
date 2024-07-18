@@ -65,7 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("country-currencies").innerText = currencies;
 
     // Fetch neighboring countries
-    if (selectedCountry.borders) {
+    const neighboringCountriesContainer = document.getElementById(
+      "neighboring-countries"
+    );
+
+    if (selectedCountry.borders && selectedCountry.borders.length > 0) {
       selectedCountry.borders.forEach((border) => {
         fetch(`https://restcountries.com/v2/alpha/${border}`)
           .then((response) => response.json())
@@ -77,11 +81,15 @@ document.addEventListener("DOMContentLoaded", () => {
               localStorage.setItem("selectedCountry", JSON.stringify(neighbor));
               window.location.href = "country.html";
             });
-            document
-              .getElementById("neighboring-countries")
-              .appendChild(neighborDiv);
+            neighboringCountriesContainer.appendChild(neighborDiv);
           });
       });
+    } else {
+      const noNeighborsMessage = document.createElement("div");
+      noNeighborsMessage.classList.add("no-neighbors-message");
+      noNeighborsMessage.innerText =
+        "This country has no neighboring countries.";
+      neighboringCountriesContainer.appendChild(noNeighborsMessage);
     }
   }
 });
