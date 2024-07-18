@@ -1,14 +1,35 @@
 const toggle = document.querySelector(".toggle");
 const icon = document.querySelector(".bx");
 
+document.addEventListener("DOMContentLoaded", () => {
+  const darkMode = localStorage.getItem("darkMode");
+
+  if (darkMode === "enabled") {
+    document.body.classList.add("dark-mode");
+    toggle.classList.add("dark-mode");
+    icon.classList.add("bx-sun");
+    icon.textContent = "Light mode";
+  } else {
+    document.body.classList.remove("dark-mode");
+    toggle.classList.remove("dark-mode");
+    icon.classList.remove("bx-sun");
+    dropDown.classList.remove("dark-mode");
+    icon.textContent = "Dark mode";
+  }
+});
+
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
   toggle.classList.toggle("dark-mode");
   icon.classList.toggle("bx-sun");
 
-  icon.textContent = document.body.classList.contains("dark-mode")
-    ? "Light mode"
-    : "Dark mode";
+  if (document.body.classList.contains("dark-mode")) {
+    icon.textContent = "Light mode";
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    icon.textContent = "Dark mode";
+    localStorage.setItem("darkMode", "disabled");
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {

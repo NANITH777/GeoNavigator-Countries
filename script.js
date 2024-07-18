@@ -8,7 +8,25 @@ const regions = document.querySelectorAll(".regions");
 const footerDisplay = document.querySelector("footer");
 const noCountryMessage = document.querySelector(".no-country");
 
-toggle.addEventListener("click", (e) => {
+document.addEventListener("DOMContentLoaded", () => {
+  const darkMode = localStorage.getItem("darkMode");
+
+  if (darkMode === "enabled") {
+    document.body.classList.add("dark-mode");
+    toggle.classList.add("dark-mode");
+    icon.classList.add("bx-sun");
+    dropDown.classList.add("dark-mode");
+    icon.textContent = "Light mode";
+  } else {
+    document.body.classList.remove("dark-mode");
+    toggle.classList.remove("dark-mode");
+    icon.classList.remove("bx-sun");
+    dropDown.classList.remove("dark-mode");
+    icon.textContent = "Dark mode";
+  }
+});
+
+toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
   toggle.classList.toggle("dark-mode");
   icon.classList.toggle("bx-sun");
@@ -16,8 +34,10 @@ toggle.addEventListener("click", (e) => {
 
   if (document.body.classList.contains("dark-mode")) {
     icon.textContent = "Light mode";
+    localStorage.setItem("darkMode", "enabled");
   } else {
     icon.textContent = "Dark mode";
+    localStorage.setItem("darkMode", "disabled");
   }
 });
 
