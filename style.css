@@ -278,3 +278,23 @@ ul {
   display: flex;
   flex-direction: column;
 }
+
+.neighbors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.neighbor-country {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.neighbor-country:hover {
+  background-color: #f0f0f0;
+}
