@@ -90,5 +90,20 @@ document.addEventListener("DOMContentLoaded", () => {
         "This country has no neighboring countries.";
       neighboringCountriesContainer.appendChild(noNeighborsMessage);
     }
+
+    // Set the map URL
+    const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${
+      selectedCountry.latlng[1] - 0.75
+    },${selectedCountry.latlng[0] - 0.75},${selectedCountry.latlng[1] + 0.75},${
+      selectedCountry.latlng[0] + 0.75
+    }&layer=mapnik&marker=${selectedCountry.latlng[0]},${
+      selectedCountry.latlng[1]
+    }&zoom=6&locale=en`;
+    const mapElement = document.getElementById("country-map");
+    if (mapElement) {
+      mapElement.src = mapUrl;
+    } else {
+      console.error("Map element not found");
+    }
   }
 });

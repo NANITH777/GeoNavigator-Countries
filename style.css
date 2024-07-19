@@ -321,6 +321,12 @@ ul {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
 }
 
+.map-container {
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+}
+
 @media (max-width: 768px) {
   .country-details-wrapper {
     flex-direction: column;
