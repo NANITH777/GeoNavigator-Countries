@@ -14,7 +14,7 @@ Welcome to the **GeoNavigator** project! This project provides an interactive in
 
 ## Demo
 
-Check out the live demo of the project [here](#).
+Check out the live demo of the project [here](https://geo-navigator-countries.vercel.app/).
 
 ## Features
 
