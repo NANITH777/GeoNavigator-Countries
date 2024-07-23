@@ -1,3 +1,7 @@
+<img width="936" alt="page" src="https://github.com/user-attachments/assets/c5d7806c-a863-426d-9ade-223abf4835ff">
+<img width="944" alt="Display" src="https://github.com/user-attachments/assets/fac011e8-10ae-4358-885b-025ded4c1db9">
+<img width="884" alt="map" src="https://github.com/user-attachments/assets/01a627a4-a830-45e3-ac5c-8c63f7d6f710">
+
 # GeoNavigator 🌍
 
 Welcome to the **GeoNavigator** project! This project provides an interactive interface for users to explore information about countries from around the world, including their population, area, region, subregion, capital, languages, currencies, and neighboring countries. The project features a dark mode, search functionality, region filtering, and an embedded map for each country.
@@ -10,11 +14,10 @@ Welcome to the **GeoNavigator** project! This project provides an interactive in
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
 
 ## Demo
 
-Check out the live demo of the project [here](#).
+Check out the live demo of the project [here](https://geo-navigator-countries.vercel.app/).
 
 ## Features
 
