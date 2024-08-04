@@ -207,8 +207,8 @@ footer p {
 }
 
 .go-to-top {
-  position: absolute;
-  right: 20px;
+  position: fixed;
+  right: 5px;
   top: 50%;
   transform: translateY(-50%);
   padding: 10px 15px;
